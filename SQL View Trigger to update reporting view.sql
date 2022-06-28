@@ -1,5 +1,5 @@
 
-/****** Object:  Trigger [dbo].[trgRepoGlobalSettings]    Script Date: 21/06/2022 20:31:44 ******/
+/****** Object:  Trigger [dbo].[trgRepoGlobalSettings]    Script Date: 27/06/2022 20:31:44 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -10,11 +10,13 @@ GO
 
 -- =============================================
 
--- Author:           Jubu - Justin Butterworth
+-- Author:           Jub - Justin Butterworth
 
--- Create date: 15/05/2020
+-- Create date: 27/06/2022
 
--- Description:      Trigger to update reporting view when the column names are altered.
+-- Description: Trigger to update reporting view when the column names are altered for the Milestone Incident Manager. This Trigger view summarizes each incident with headings matching the custom values defined in the MC.
+-- Important - This is only relative to Demo systems or systems where the incident Manager categories change frequently and this needs to be reflected in the reporting. For Production, systems recommend waiting for the IM API to be available. 
+--		   This script is provided as-is and not supported via Milestone. This script may fail to work between Milestone upgrades as Milestone reserves the right to alter the Database schema without warning.
 
 -- =============================================
 
@@ -170,7 +172,7 @@ SELECT top 1
 
         ,I.ExtPropString2 as ''' +@ExtPropString2 + '''
 
-        ,I.ExtPropString3  as ''' +@ExtPropString3 + '''
+        ,I.ExtPropString3 as ''' +@ExtPropString3 + '''
 
   FROM [dbo].[RepoIncident] as I
 
