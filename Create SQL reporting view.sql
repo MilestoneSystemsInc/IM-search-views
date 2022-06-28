@@ -1,5 +1,7 @@
-
 /****** Object:  View [dbo].[reporting]    Script Date: 27/06/2022 20:31:44 ******/
+USE Surveillance_IM
+GO
+
 SET ANSI_NULLS ON
 GO
 

@@ -8,6 +8,8 @@
 -- Important - This view is not dynamic and is just to read data. This script is provided as-is and not supported via Milestone. This script may fail to work between Milestone upgrades as Milestone reserves the right to alter the Database schema without warning.
 
 -- =============================================
+USE Surveillance_IM
+GO
 SET ANSI_NULLS ON
 GO
 
