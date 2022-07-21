@@ -124,6 +124,8 @@ SELECT top 1
 
       ,I.[TypeStr] as "Classification"
 
+	  ,S1.Title as "Status"
+
       ,I.TimeCreated as "Date of Incident"
 
         ,D.Title as ''' +@ExtDropdown1 + '''
@@ -186,9 +188,10 @@ LEFT JOIN [dbo].[RepoDynamicalDataTypesAndOptions] as D
 
         LEFT JOIN [dbo].[RepoDynamicalDataTypesAndOptions] as D5
 
-    ON D5.Id=I.Category5Id;'
+    ON D5.Id=I.Category5Id
+	    LEFT JOIN [dbo].[RepoDynamicalDataTypesAndOptions] as S1
 
+    ON S1.Id=I.StatusId;'
 
        exec(@SQLEXEC);
-
 
